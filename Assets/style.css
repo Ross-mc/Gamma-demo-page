@@ -1,6 +1,6 @@
 @font-face{
     font-family: "Mulish";
-    src:url("/Assets/fonts/Mulish-ExtraBold.ttf")
+    src:url("/Assets/fonts/Mulish-Black.ttf")
 }
 
 
@@ -45,7 +45,7 @@ body{
 }
 
 .purple-text{
-    color: #7653f3
+    color: #7653f3;
 }
 
 #desc{
