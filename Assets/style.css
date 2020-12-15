@@ -39,7 +39,16 @@ body{
     top: 10%;
 }
 
-#main-header{
+.close-div{
+    position: absolute;
+    width: 75%;
+    height: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10%;
+}
+
+.header{
     font-size: 1.2rem;
     font-weight: bolder;
 }
@@ -48,7 +57,7 @@ body{
     color: #7653f3;
 }
 
-#desc{
+.desc{
     font-size: 0.7rem;
     margin-bottom: 15%;
     color: #444444;
@@ -143,4 +152,19 @@ label{
     top: 50%;
     transform: translateY(-50%);
     margin-left: 5%;
+}
+
+@media(max-width: 1100px){
+    #remember{
+        text-align: center;
+        margin: 0 auto;
+        width: 80%;
+        line-height: 40px;
+    }
+
+    .switch{
+        left: 50%;
+        transform: translateX(-50%);
+        top: 65%
+    }
 }

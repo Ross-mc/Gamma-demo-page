@@ -1,21 +1,45 @@
 //query selectors
 
-var submitBtn = document.querySelector("#submitBtn");
-var switchDiv = document.querySelector(".switch");
+const submitBtn = document.querySelector("#submitBtn");
+const switchDiv = document.querySelector(".switch");
 
 //global variables
 
-var switchOff = true
+let switchOff = true
 
 // handlers
 const loginBtnHandler = event => {
     event.preventDefault();
-    console.log('submit button was clicked')
+    const form = document.querySelector("#main-form");
+    const rememberPasswordEl = document.querySelector(".remember-password")
+
+    setTimeout(function(){
+        form.style.display = 'none';
+        rememberPasswordEl.style.display = "none";
+
+        const closeDiv = document.createElement("div");
+        closeDiv.className = "close-div";
+
+        const h1El = document.createElement("h1");
+        h1El.className = "purple-text header";
+        h1El.textContent = "You are now logged in";
+        closeDiv.appendChild(h1El);
+
+        const paraEl = document.createElement("p")
+        paraEl.className = "desc";
+        paraEl.textContent = "Great Stuff";
+        closeDiv.appendChild(paraEl)
+
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.appendChild(closeDiv, paraEl);
+
+        
+    }, 4000)
 }
 
 
 const toggleBtnHandler = () => {
-    var circleDiv = document.querySelector(".circle");
+    const circleDiv = document.querySelector(".circle");
     if (switchOff) {
         switchDiv.style.backgroundColor = "#7653f3";
         var marginLeft = 5;
@@ -39,8 +63,8 @@ const toggleBtnHandler = () => {
         }, 1)
         switchOff = true;
     }
-    
 }
+
 
 
 //click listeners
