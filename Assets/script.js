@@ -1,5 +1,6 @@
 //query selectors
 
+const mainCont = document.querySelector("#main-cont");
 const submitBtn = document.querySelector("#submitBtn");
 const switchDiv = document.querySelector(".switch");
 
@@ -11,27 +12,47 @@ let switchOff = true
 const loginBtnHandler = event => {
     event.preventDefault();
     const form = document.querySelector("#main-form");
-    const rememberPasswordEl = document.querySelector(".remember-password")
+    const rememberPasswordEl = document.querySelector(".remember-password");
+
+    //changing styling of elements during load state
+    form.style.opacity = "0.3";
+    rememberPasswordEl.style.opacity = "0.3";
+    submitBtn.style.backgroundColor = "#f7f8fd"
+    submitBtn.style.border = "2px solid #cacee9";
+    submitBtn.style.boxShadow = "0px 0px 0px 0px black";
+    submitBtn.style.color = "#7653f3";
+    submitBtn.style.opacity = "1"
+
+    submitBtn.textContent = "Logging in"
+
+    //creating the animations
+    var loadingEl = document.createElement("div");
+    loadingEl.setAttribute("id", "loading");
+    mainCont.appendChild(loadingEl);
+    loadingAnimFunc();
+
+    var dotsEl = document.createElement("span");
+    dotsEl.setAttribute("id", "dots");
+    submitBtn.appendChild(dotsEl);
+    loadingDotsFunc();
+
+
+    
 
     setTimeout(function(){
         form.style.display = 'none';
         rememberPasswordEl.style.display = "none";
 
-        const closeDiv = document.createElement("div");
-        closeDiv.className = "close-div";
-
-        const h1El = document.createElement("h1");
-        h1El.className = "purple-text header";
+        const h1El = document.getElementById("main-header")
+    
         h1El.textContent = "You are now logged in";
-        closeDiv.appendChild(h1El);
 
-        const paraEl = document.createElement("p")
-        paraEl.className = "desc";
+        const paraEl = document.getElementById("main-para")
         paraEl.textContent = "Great Stuff";
-        closeDiv.appendChild(paraEl)
 
-        const sidebar = document.querySelector(".sidebar");
-        sidebar.appendChild(closeDiv, paraEl);
+        loadingEl.remove();
+        dotsEl.remove();
+
 
         
     }, 4000)

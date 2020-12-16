@@ -1,6 +1,6 @@
 @font-face{
-    font-family: "Mulish";
-    src:url("/Assets/fonts/Mulish-Black.ttf")
+    font-family: "Mulish-Medium";
+    src:url("fonts/Mulish-Medium.ttf") format('truetype')
 }
 
 
@@ -9,7 +9,7 @@ body{
     padding: 0;
     margin: 0;
     background-color: #ffffff;
-    font-family: 'Mulish', sans-serif;
+    font-family: 'Mulish-Medium', sans-serif;
     color: #444444;
 }
 
@@ -30,7 +30,7 @@ body{
     left: 35%;
 }
 
-#main-form{
+#main-cont{
     position: absolute;
     width: 75%;
     height: 60%;
@@ -38,6 +38,7 @@ body{
     transform: translateX(-50%);
     top: 10%;
 }
+
 
 .close-div{
     position: absolute;
@@ -59,6 +60,7 @@ body{
 
 .desc{
     font-size: 0.7rem;
+    font-weight: lighter;
     margin-bottom: 15%;
     color: #444444;
 }
@@ -99,6 +101,7 @@ label{
     top: 70%;
     box-shadow: 0px 15px 25px -11px #441adb;
     transition: top 0.4s;
+    outline: none;
 }
 
 #submitBtn:hover{
@@ -152,6 +155,14 @@ label{
     top: 50%;
     transform: translateY(-50%);
     margin-left: 5%;
+}
+
+#loading{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15%;
+    width: 110%;
 }
 
 @media(max-width: 1100px){

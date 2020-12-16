@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="Assets/style.css">
-    <title>Document</title>
+    <title>Gamma</title>
 </head>
 <body>
 
     <div class="sidebar">
-        <form id="main-form">
-            <h1 class="purple-text header">LOGIN</h1>
-            <p class="desc">Login with your <strong>Gamma</strong> Cloud telephony account.</p>
-            <label for="username">Username</label><br>
-            <input class="user-input" type="email" id="username">
-            <label for="password">Password</label><br>
-            <input class="user-input" type="text" id="password">
-            <a href="#" class="purple-text" id="forgot-password">Forgot password</a>
-            <button type="submit" class="move-up" id="submitBtn">Login</button>
-        </form>
+        <div id="main-cont">
+            <h1 class="purple-text header" id="main-header">LOGIN</h1>
+            <p class="desc" id="main-para">Login with your <strong>Gamma</strong> Cloud telephony account.</p>
+            <form action="/" id="main-form">
+                <label for="username">Username</label><br>
+                <input class="user-input" type="email" id="username">
+                <label for="password">Password</label><br>
+                <input class="user-input" type="text" id="password">
+                <a href="#" class="purple-text" id="forgot-password">Forgot password</a>
+                <button type="submit" class="move-up" id="submitBtn">Login</button>
+            </form>
+
+        </div>
         <div class="remember-password">
             <p id="remember">Remember my password</p>
             <div class="switch">
@@ -28,7 +31,9 @@
         </div>
     </div>
     <img src="Assets/login_illustration.png" alt="Gamma Icon" id="icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js" integrity="sha512-0bCDSnaX8FOD9Mq8WbHcDwshXwCB5V4EP+UBu87WQgga2b7lAsuEbaSmIZjH/XEmNhJuhrPbFHemre5HZwrk9w==" crossorigin="anonymous"></script>
+    <script src="Assets/script.js"></script>
+    <script src="Assets/animate.js"></script>
 
-    <script src="Assets/script.js"></script>    
 </body>
 </html>
