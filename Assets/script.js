@@ -13,27 +13,31 @@ const loginBtnHandler = event => {
     event.preventDefault();
     const form = document.querySelector("#main-form");
     const rememberPasswordEl = document.querySelector(".remember-password");
+    const labels = document.querySelectorAll(".input-label");
+    const inputs = document.querySelectorAll(".user-input");
+    const links = document.querySelectorAll("form-link");
 
     //changing styling of elements during load state
-    form.style.opacity = "0.3";
-    rememberPasswordEl.style.opacity = "0.3";
+
+    const elementsToFade = [];
+    elementsToFade.push(...labels, ...inputs, ...links, rememberPasswordEl);
+
+    elementsToFade.forEach(elem => elem.style.opacity = "0.3")
+
+
     submitBtn.style.backgroundColor = "#f7f8fd"
     submitBtn.style.border = "2px solid #cacee9";
     submitBtn.style.boxShadow = "0px 0px 0px 0px black";
     submitBtn.style.color = "#7653f3";
-    submitBtn.style.opacity = "1"
-
-    submitBtn.textContent = "Logging in"
 
     //creating the animations
     var loadingEl = document.createElement("div");
     loadingEl.setAttribute("id", "loading");
+    loadingEl.style.color = "#7653f3";
     mainCont.appendChild(loadingEl);
     loadingAnimFunc();
 
-    var dotsEl = document.createElement("span");
-    dotsEl.setAttribute("id", "dots");
-    submitBtn.appendChild(dotsEl);
+    submitBtn.innerHTML = "Logging in <span id='dots'></span>"
     loadingDotsFunc();
 
 
