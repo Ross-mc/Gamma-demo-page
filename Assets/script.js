@@ -6,29 +6,38 @@ const switchDiv = document.querySelector(".switch");
 
 //global variables
 
-let switchOff = true
+let switchOff = true;
+let loading = false;
 
 // handlers
 const loginBtnHandler = event => {
     event.preventDefault();
+
+    if (loading){
+        return
+    }
+
+    loading = true;
+
     const form = document.querySelector("#main-form");
     const rememberPasswordEl = document.querySelector(".remember-password");
     const labels = document.querySelectorAll(".input-label");
     const inputs = document.querySelectorAll(".user-input");
-    const links = document.querySelectorAll("form-link");
+    const links = document.querySelector("a");
 
     //changing styling of elements during load state
 
     const elementsToFade = [];
-    elementsToFade.push(...labels, ...inputs, ...links, rememberPasswordEl);
+    elementsToFade.push(...labels, ...inputs, links, rememberPasswordEl);
 
-    elementsToFade.forEach(elem => elem.style.opacity = "0.3")
+    elementsToFade.forEach(elem => elem.style.opacity = "0.2")
 
 
     submitBtn.style.backgroundColor = "#f7f8fd"
     submitBtn.style.border = "2px solid #cacee9";
     submitBtn.style.boxShadow = "0px 0px 0px 0px black";
     submitBtn.style.color = "#7653f3";
+
 
     //creating the animations
     var loadingEl = document.createElement("div");
@@ -37,10 +46,18 @@ const loginBtnHandler = event => {
     mainCont.appendChild(loadingEl);
     loadingAnimFunc();
 
-    submitBtn.innerHTML = "Logging in <span id='dots'></span>"
+    submitBtn.textContent = "";
+    var textEl = document.createElement("div");
+    textEl.setAttribute("id", "btnText");
+    textEl.innerHTML = "Logging in"
+
+    var dotsEl = document.createElement("div");
+    dotsEl.setAttribute("id", "dots");
+
+    submitBtn.appendChild(textEl);
+    submitBtn.appendChild(dotsEl);
+
     loadingDotsFunc();
-
-
     
 
     setTimeout(function(){
@@ -59,7 +76,7 @@ const loginBtnHandler = event => {
 
 
         
-    }, 4000)
+    }, 5000)
 }
 
 

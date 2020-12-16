@@ -66,7 +66,7 @@ body{
 }
 
 .desc{
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-weight: lighter;
     margin-bottom: 15%;
     color: #444444;
@@ -77,7 +77,7 @@ body{
     border-radius: 4px;
     border: 2px solid #cacee9;
     margin-top: 10px;
-    height: 5%;
+    height: 4vh;
 }
 
 .user-input:focus{
@@ -110,10 +110,15 @@ label{
     transition: top 0.4s;
     outline: none;
     display: inline;
+    
 }
 
 #submitBtn:hover{
     top: 69%;
+}
+
+#btnText{
+    display: inline;
 }
 
 #forgot-password{
@@ -169,9 +174,31 @@ label{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 10%;
+    top: 7%;
     width: 110%;
 }
+
+#btnText{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30%;
+}
+
+@media(min-width: 1440px){
+    #bntText{
+        left: 35%;
+    }
+}
+
+#dots{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 60%;
+    width: 10%;
+}
+
 
 @media(max-width: 1100px){
     #remember{
